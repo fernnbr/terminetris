@@ -32,7 +32,7 @@ To make it executable directly:
 
 ```zsh
 chmod +x terminetris.py
-./tetris.py
+./terminetris.py
 ```
 
 ---
