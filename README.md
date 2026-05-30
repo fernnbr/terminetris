@@ -32,8 +32,8 @@
 | Requirement | Details |
 |---|---|
 | Python | 3.6 or higher |
-| OS | macOS, Linux, or any Unix-like system with a terminal |
-| Library | `curses` (included in Python's standard library) |
+| OS | macOS, Linux or any "Unix-like" system with a terminal |
+| Library | `curses` . It's included in Python's standard library |
 | Terminal size | At least **24 rows × 60 columns** recommended |
 
 > **Psiu, Windows users:** `curses` is not natively available on Windows.
