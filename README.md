@@ -227,5 +227,5 @@ pip install windows-curses
 ## License
 
 Yeah buddies it's free to use, modify, and distribute. No attribution required.
-But please, let me know if your gamme is as fun as this. I would love to lern with you and your code. 
+But please, let me know if your game is as fun as this. I would love to learn with you and your code. 
 
