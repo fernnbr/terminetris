@@ -25,13 +25,13 @@ Oh and it uses the built-in `curses` library. ;) (and no external dependencies r
 No installation needed. Just download `tetris.py` and run:
 
 ```zsh
-python3 tetris.py
+python3 terminetris.py
 ```
 
 To make it executable directly:
 
 ```zsh
-chmod +x tetris.py
+chmod +x terminetris.py
 ./tetris.py
 ```
 
