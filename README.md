@@ -1,11 +1,3 @@
-# Terminetris | Terminal Edition
-*My Tetris for Terminals. Yah. Tetris game for the terminal, written in Python. It feels so nostalgic!* 
-Oh and it uses the built-in `curses` library. ;) (and no external dependencies required.) 
-
-*Well...I really LOVE tetris. That's why I created this tetris for terminal, to play when I am... bored or without internet.* 
-
----
-
 ```
 ╔═════════════════════════════════════════════════════════════════╗
 ║                                                                 ║
@@ -26,6 +18,12 @@ Oh and it uses the built-in `curses` library. ;) (and no external dependencies r
 ║                                        The Terminal Tetris      ║                                                 
 ╚═════════════════════════════════════════════════════════════════╝
 ```
+
+# Terminetris | Terminal Edition
+*My Tetris for Terminals. Yah. Tetris game for the terminal, written in Python. It feels so nostalgic!* 
+Oh and it uses the built-in `curses` library. ;) (and no external dependencies required.) 
+
+*Well...I really LOVE tetris. That's why I created this tetris for terminal, to play when I am... bored or without internet.* 
 
 ---
 
