@@ -8,7 +8,8 @@ import curses
 import random
 import time
 
-# ---------- Tetromino definitions (shapes × rotations) ------------------ 
+# Tetromino definitions (shapes × rotations) 
+
 TETROMINOES = {
     'I': [
         [(0,1),(1,1),(2,1),(3,1)],
@@ -68,11 +69,11 @@ class Tetris:
         self.bag = []
         self.current = None
         self.next_piece = None
-        self.cx = self.cy = 0       # it determines current piece position (row, col)
-        self.crot = 0               # it determines current rotation index
+        self.cx = self.cy = 0       # (to remember) it determines current piece position (row, col)
+        self.crot = 0               # (to remember) it determines current rotation index
         self._spawn()
 
-    # --------- piece bag ------------------
+    # Piece bag 
   
     def _refill_bag(self):
         self.bag = list(TETROMINOES.keys())
@@ -83,7 +84,7 @@ class Tetris:
             self._refill_bag()
         return self.bag.pop()
 
-    # --------- spawn ------------------------------------------------------
+    # Spawn
   
     def _spawn(self):
         if self.next_piece is None:
@@ -97,7 +98,8 @@ class Tetris:
         if self._collides(self.cy, self.cx, shape):
             self.game_over = True
 
-    # --------- collision ---------
+    # Collision
+    
     def _collides(self, row, col, shape):
         for r, c in shape:
             nr, nc = row + r, col + c
@@ -107,7 +109,8 @@ class Tetris:
                 return True
         return False
 
-    # --------- movement ------------------------------------
+    # Movement 
+    
     def move(self, dr, dc):
         shape = TETROMINOES[self.current][self.crot]
         if not self._collides(self.cy + dr, self.cx + dc, shape):
@@ -133,7 +136,8 @@ class Tetris:
             self.cy += 1
         self._lock()
 
-    # --------- lock & clear ---------------------------
+    # Lock & clear
+    
     def _lock(self):
         shape = TETROMINOES[self.current][self.crot]
         color = COLORS[self.current]
@@ -160,7 +164,8 @@ class Tetris:
         else:
             self.cy += 1
 
-    # --------- ghost piece ---------------------------
+    # Ghost piece
+    
     def ghost_row(self):
         shape = TETROMINOES[self.current][self.crot]
         gy = self.cy
@@ -169,7 +174,8 @@ class Tetris:
         return gy
 
 
-# --------- Renderer ---------
+# Renderer
+
 def init_colors():
     curses.start_color()
     curses.use_default_colors()
@@ -237,7 +243,8 @@ def draw_sidebar(win, game, origin_r, sidebar_c):
     label('──────────', 12)
     label('  NEXT', 13)
 
-    # the next piece preview
+    # The next piece preview
+    
     if game.next_piece:
         shape = TETROMINOES[game.next_piece][0]
         color = COLORS[game.next_piece]
@@ -270,7 +277,7 @@ def draw_overlay(win, text, height, width):
         safe_addstr(win, start_r + i, width // 2 - len(line) // 2, line, curses.A_BOLD)
 
 
-# --------- Main game loop ---------------------------
+# Main game loop
 def main(stdscr):
     curses.curs_set(0)
     stdscr.nodelay(True)
@@ -278,7 +285,7 @@ def main(stdscr):
     init_colors()
 
     height, width = stdscr.getmaxyx()
-    # board origin: centered
+    # board origin centered
     origin_r = (height - BOARD_H) // 2
     origin_c = (width - BOARD_W * 2) // 2 - 2  # leave room for border
     sidebar_c = origin_c + BOARD_W * 2 + 4
@@ -290,7 +297,8 @@ def main(stdscr):
         now = time.time()
         speed = LEVEL_SPEEDS[game.level]
 
-        # --------- input ---------------------------
+        # Input
+        
         key = stdscr.getch()
         if key == ord('q') or key == ord('Q'):
             break
@@ -308,13 +316,15 @@ def main(stdscr):
             elif key == ord(' '):
                 game.hard_drop()
 
-        # --------- gravity tick ---------------------------
+        # Gravity tick
+        
         if not game.paused and not game.game_over:
             if now - last_tick >= speed:
                 game.tick()
                 last_tick = now
 
-        # --------- draw ---------------------------
+        # Draw
+        
         stdscr.erase()
         draw_border(stdscr, origin_r, origin_c)
         draw_board(stdscr, game, origin_r, origin_c)
