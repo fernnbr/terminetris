@@ -1,6 +1,8 @@
-# Terminetris — Terminal Edition
-My Tetris for Terminal. A fully-featured Tetris game for the terminal, written in Python using the built-in `curses` library. 
-No external dependencies required. Well...I really LOVE tetris. That's why I created this tetris for terminal, to play when I am... bored or without internet. 
+# Terminetris | Terminal Edition
+*My Tetris for Terminals. A fully-featured Tetris game for the terminal, written in Python. It feels so nostalgic!* 
+Oh and it uses the built-in `curses` library. ;) (and no external dependencies required.) 
+
+*Well...I really LOVE tetris. That's why I created this tetris for terminal, to play when I am... bored or without internet.* 
 
 ---
 
@@ -51,7 +53,7 @@ chmod +x tetris.py
 
 ## ||| Gameplay
 
-### Objective
+### ||| Objective
 
 Clear as many horizontal lines as possible by filling them completely with blocks. 
 </br> Lines disappear when full, and the board shifts down. 
@@ -110,7 +112,7 @@ Points are awarded based on how many lines are cleared at once, multiplied by th
 | J | J-shape | Blue |
 | L | L-shape | White |
 
-### 7-Bag Randomizer
+### ||| 7-Bag Randomizer
 
 Pieces are drawn from a shuffled bag containing one of each terminetris. 
 </br> When the bag is exhausted, a new shuffled bag is created. 
@@ -120,11 +122,11 @@ Pieces are drawn from a shuffled bag containing one of each terminetris.
 A faint `░░` shadow is projected below the active piece showing exactly where it will land. 
 </br> This helps with precise placement, especially at higher speeds. hehehe
 
-### Wall Kicks
+### ||| Wall Kicks
 
 When rotating near a wall or other blocks, the game attempts to shift the piece left or right (up to 2 cells) to make the rotation valid. </br> This prevents frustrating failed rotations at the edges of the board. (I reckon) 
 
-### Next Piece Preview
+### ||| Next Piece Preview
 
 YAYYYY. The sidebar shows the upcoming piece so you can plan your moves in advance.
 
